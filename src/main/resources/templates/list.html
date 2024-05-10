@@ -13,9 +13,13 @@
 
 <table class="centeredTable">
   <tr>
+    <td>
+      <a @href="/list/jobs?column=all">View All</a>
+    </td>
     <th:block th:each="column : ${columns}">
       <th th:text = "${column.value}"></th>
     </th:block>
+
   </tr>
   <tr>
     <!-- TODO #2: Complete the View Jobs By Category Table. -->
