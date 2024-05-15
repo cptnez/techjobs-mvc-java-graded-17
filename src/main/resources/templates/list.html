@@ -13,9 +13,6 @@
 
 <table class="centeredTable">
   <tr>
-    <td>
-      <a @href="/list/jobs?column=all">View All</a>
-    </td>
     <th:block th:each="column : ${columns}">
       <th th:text = "${column.value}"></th>
     </th:block>
@@ -23,9 +20,11 @@
   </tr>
   <tr>
     <!-- TODO #2: Complete the View Jobs By Category Table. -->
-
-    <td></td> <!-- Feel free to remove or modify this element if necessary. -->
-
+    <td>
+        <li>
+          <a th:href="@{/list/jobs(column=all)}">View All</a>
+        </li>
+    </td>
     <td th:each="category : ${tableChoices}">
       <ul>
         <li th:each="item : ${category.value}">
