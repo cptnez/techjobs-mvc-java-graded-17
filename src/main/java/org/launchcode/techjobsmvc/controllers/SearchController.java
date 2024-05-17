@@ -28,7 +28,6 @@ public class SearchController {
     }
 
     // TODO #3 - Create a handler to process a search request and render the updated search view.
-    //5/15 passing Task 3 tests. Working through number 5 of Task 3.
     @PostMapping("results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
 
@@ -37,7 +36,8 @@ public class SearchController {
         } else {
             model.addAttribute("jobs", JobData.findByColumnAndValue(searchType, searchTerm));
         }
-        return "list-jobs";
+        model.addAttribute("columns", columnChoices);
+        return "/search";
     }
 
 }
